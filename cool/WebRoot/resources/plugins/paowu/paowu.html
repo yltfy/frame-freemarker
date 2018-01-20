@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style></style>
+		<script>
+			window.console = window.console || function(t) {};
+			window.open = function(){console.log('window.open is disabled');};
+			window.print = function(){console.log('window.print is disabled');};
+			if(false){
+				window.ontouchstart = function(){};
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<p class="m-top">
+					<a href="https://github.com/amibug/fly" target="_blank">
+						https://github.com/amibug/fly
+					</a>
+					<span>
+						喜欢就在github上star一个吧
+					</span>
+				</p>
+				<section class="m-tip">
+					click at the blank! click here</br>
+					在空白处点击鼠标实现放入购物车效果
+				</section>
+			</div>
+		</div>
+		
+		<div class="m-sidebar">
+			<div class="cart">
+				<i id="end"></i>
+				<span>购物车</span>
+			</div>
+		</div>
+		
+		<script src="http://lib.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="src/requestAnimationFrame.js"></script>
+		<script src="dist/jquery.fly.min.js"></script>
+		<script>
+			$('html,body').on('click',addProduct);
+			function addProduct(event){
+				var offset = $('#end').offset(),flyer = $('<div>dsfh</div>');
+				flyer.fly({
+					start:{
+						left:event.pageX,
+						top:event.pageY
+					},
+					end:{
+						left:offset.left,
+						top:offset.top,
+						width:20,
+						height:20
+					}
+				});
+			}
+		</script>
+	</body>
+</html>

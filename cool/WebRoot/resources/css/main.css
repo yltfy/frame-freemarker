@@ -1,0 +1,65 @@
+/* a标签样式重置    start */
+a{text-decoration:none;outline:none;blr:expression(this.onFocus=this.blur());}
+a:link{text-decoration:none;outline:none;blr:expression(this.onFocus=this.blur());}
+a:visited{text-decoration:none;outline:none;blr:expression(this.onFocus=this.blur());}
+a:hover{text-decoration:none;outline:none;blr:expression(this.onFocus=this.blur());cursor:pointer;}
+a:active{text-decoration:none;outline:none;blr:expression(this.onFocus=this.blur());}
+/* end  a标签样式重置   */
+
+/* wrap start */
+.wrap{color:#939da8;width:100%;}
+/* end wrap */
+
+/* wrap content start  */
+.wrap .content{background:#f8f8f8;}
+.wrap .content .cnt{background:#EEEEEE;}
+input[placeholder]{color:#e5e5e5;font-size:12px;padding-left:5px;}
+.wrap	.content .sbtn{margin-right:20px;}	
+.wrap	.content .sbtn input{height:26px;margin-top:5px;width: 145px;border:0;background:#666}
+.wrap	.content .sbtn a{height:26px;width:46px;display:inline-block;background:#28B779;color:#fff;margin-top:5px;text-align:center;
+		font-size:16px;outline:none;blr:expression(this.onFocus=this.blur());}
+/* end wrap content  */
+
+.tabwrap{padding:5px;}
+.tztab{width:100%;border-collapse:collapse;border:1px solid #ccc;}
+.tztab th,td{border-bottom:1px solid #fff;text-align:left;padding:4px 6px;font-size:12px;}
+.tztab th{padding:10px;}
+.tztab thead th{background:#2E363F;color:#f9f9f9}
+
+/* table样式  	start */
+.tztab tbody tr:nth-child(odd){background:#eaeaea}
+.tztab tbody tr:nth-child(even){background:#f8f8f8}
+/* end	table样式	 */
+
+/* 表格行与列样式    start */
+.tztab tbody tr:hover{background:#333;color:#fff}
+.tztab tbody tr:hover a{color:#fff;text-decoration:none;outline:none;blr:expression:"this.blur();";}
+.tztab tbody tr:hover td:hover{background:#28B779}
+.tztab tbody tr td span:hover{cursor:pointer;}
+/* end 表格行与列样式   */
+
+.tztab caption{background:#2E363F;color:#fff;padding:5px;font-size:18px;font-weight:700;
+	caption-side:top;
+	text-align:center;
+}
+
+.up{
+	display:inline-block;
+	overflow:hidden;
+	border-top:4px solid transparent;
+	border-right:4px solid transparent;
+	border-bottom:4px solid #fff;
+	border-left:4px solid transparent;
+	cursor:pointer;
+}
+.down{
+	display:inline-block;
+	overflow:hidden;
+	position:relative;
+	top:4px;
+	border-top:4px solid #fff;
+	border-right:4px solid transparent;
+	border-bottom:4px solid transparent;
+	border-left:4px solid transparent;
+	cursor:pointer;
+}	

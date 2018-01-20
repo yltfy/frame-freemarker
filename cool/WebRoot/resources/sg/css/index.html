@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+	</head>
+	<body>
+		<!--
+        	作者：18850149410@163.com
+        	时间：2017-11-25
+        	描述：单选框
+        -->
+		<lable class="checkbox"></lable>
+		<lable class="checkbox"></lable>
+		<lable class="checkbox"></lable>
+		<lable class="checkbox"></lable>
+		<lable class="checkbox"></lable>
+		
+		
+		<!--
+        	作者：18850149410@163.com
+        	时间：2017-11-25
+        	描述：全选框
+        -->
+		<lable class="checked-all"></lable>
+
+		<div class="full-tip-box">
+	        <span class="full-tip">
+	            <span class="inner">
+	                <i class="ico"></i>
+	                <span class="text" data-id="label">新建文件夹成功</span>
+	        	</span>
+	        </span>
+	    </div>
+
+		<script type="text/javascript">
+			
+			function wholeSelect(){
+				var arr = [];
+				$(".checkbox").each(function(index, checkbox){
+					var $checkbox = $(checkbox);
+					if($checkbox.hasClass("singlebox-checked")){
+						arr.push(checkbox[index]);
+					};
+				});
+				return arr;
+			}
+			
+			
+			$(".checkbox").on("click", function(){
+				$(this).toggleClass("singlebox-checked");
+				if($(this).hasClass("singlebox-checked")){
+					if(wholeSelect().length == $(".checkbox").length){
+						$(".checked-all").addClass("all-checked");
+					}
+				}else{
+					$(".checked-all").removeClass("all-checked");
+				}
+			});
+			
+			$(".checked-all").click(function(){
+				if($(this).hasClass("all-checked")){
+					$(".checkbox").each(function(index, checkbox){
+						var $checkbox = $(checkbox);
+						$checkbox.removeClass("singlebox-checked");
+					});
+				}else{
+					$(".checkbox").each(function(index, checkbox){
+						var $checkbox = $(checkbox);
+						$checkbox.addClass("singlebox-checked");
+					});
+				}
+				$(this).toggleClass("all-checked");
+			});
+		</script>
+		
+		<script type="text/javascript">
+			//封装小提示
+			var $fullTipBox = $(".full-tip-box");
+			var $tipText = $(".text");
+			function tipsFn(cls, title){
+				//每次调用的时候，都要从-32px开始向0的位置运动
+				$fullTipBox.css("top",-32);
+				$fullTipBox.transition = "none";
+				
+				//给样式一个缓冲效果
+				setTimeout(function(){
+					$fullTipBox.className = "full-tip-box";
+					$fullTipBox.css("top",0);
+					$fullTipBox.transition = ".3s";
+					$fullTipBox.addClass(cls);
+					$tipText.text(title);
+				}, 0);
+				
+				//保证定时器只有一个在开着
+				clearTimeout($fullTipBox.timer);	
+				$fullTipBox.timer = setTimeout(function(){
+					$fullTipBox.css({"top":-32});
+				}, 2000);
+			}
+			
+			//tipsFn("ok", "新建文件成功");
+			//tipsFn("err", "新建文件成功");
+			tipsFn("warn", "新建文件成功");
+
+			$.fn.topTips = function(){
+
+			}
+
+			$.fn.topTips.template = function(){
+				var html = "";
+				html += "<div class='tz-full-tip-box'>"+
+						"	        <span class='tz-full-tip'>"+
+						"	            <span class='inner'>"+
+						"	                <i class='ico'></i>"+
+						"	                <span class='text' data-id='label'>新建文件夹成功</span>"+
+						"	        	</span>"+
+						"	        </span>"+
+						"	    </div>";
+			}
+		</script>
+	</body>
+</html>
