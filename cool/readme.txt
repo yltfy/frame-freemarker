@@ -1,5 +1,6 @@
+
 项目意义：
-	搭建一个Spring+SpringMVC+Freemarker+MySql+Tomcat项目框架
+	搭建一个Spring+SpringMVC+Freemarker+MySql+Tomcat项目后台框架
 	
 	技术点：
 		自定义前端组件
